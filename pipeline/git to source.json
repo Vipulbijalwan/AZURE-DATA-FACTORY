@@ -1,9 +1,9 @@
 {
-	"name": "source to destination",
+	"name": "git to source",
 	"properties": {
 		"activities": [
 			{
-				"name": "copy data from source to destination",
+				"name": "git to source",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -18,9 +18,8 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -49,13 +48,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_to_dest",
+						"referenceName": "source_git",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "csv_sink",
+						"referenceName": "sink_git",
 						"type": "DatasetReference"
 					}
 				]
