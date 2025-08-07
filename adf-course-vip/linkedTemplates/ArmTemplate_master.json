@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "https://adfcourses.dfs.core.windows.net/"
 		},
+		"githttp_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,6 +51,9 @@
 					},
 					"ADLhttp_properties_typeProperties_url": {
 						"value": "[parameters('ADLhttp_properties_typeProperties_url')]"
+					},
+					"githttp_properties_typeProperties_url": {
+						"value": "[parameters('githttp_properties_typeProperties_url')]"
 					}
 				}
 			},

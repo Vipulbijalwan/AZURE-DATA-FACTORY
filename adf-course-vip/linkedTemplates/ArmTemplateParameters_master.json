@@ -11,6 +11,9 @@
 		"ADLhttp_properties_typeProperties_url": {
 			"value": "https://adfcourses.dfs.core.windows.net/"
 		},
+		"githttp_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
 		"containerUri": {
 			"value": ""
 		},
