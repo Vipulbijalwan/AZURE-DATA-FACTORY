@@ -1,5 +1,5 @@
 {
-	"name": "sink_git",
+	"name": "metadata",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADLhttp",
@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Athletes.csv",
 				"folderPath": "csv_files",
 				"fileSystem": "destination"
 			},
