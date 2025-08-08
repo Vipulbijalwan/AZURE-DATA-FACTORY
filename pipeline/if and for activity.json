@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "metadata",
+						"referenceName": "meta_data",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -24,7 +24,6 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -52,18 +51,18 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "If file matches",
+							"name": "If Condition1",
 							"type": "IfCondition",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@startswith(item().name,'Athletes')",
+									"value": "@startswith(item().name,'Atheletes')",
 									"type": "Expression"
 								},
 								"ifTrueActivities": [
 									{
-										"name": "Copy Athelete Data",
+										"name": "Copy data Atheletes folder",
 										"type": "Copy",
 										"dependsOn": [],
 										"policy": {
@@ -109,11 +108,11 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "param_source_csv",
+												"referenceName": "perm_data_source",
 												"type": "DatasetReference",
 												"parameters": {
 													"file_name": {
-														"value": "@item().name",
+														"value": "@item().file_name",
 														"type": "Expression"
 													}
 												}
@@ -121,11 +120,11 @@
 										],
 										"outputs": [
 											{
-												"referenceName": "Althete_sink",
+												"referenceName": "param_sink",
 												"type": "DatasetReference",
 												"parameters": {
 													"file_name": {
-														"value": "@item().name",
+														"value": "@item().file_name",
 														"type": "Expression"
 													}
 												}

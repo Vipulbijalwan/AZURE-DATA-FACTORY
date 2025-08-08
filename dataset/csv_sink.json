@@ -2,7 +2,7 @@
 	"name": "csv_sink",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ADLhttp",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

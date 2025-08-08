@@ -1,10 +1,6 @@
 {
 	"name": "Althete_sink",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ADLhttp",
-			"type": "LinkedServiceReference"
-		},
 		"parameters": {
 			"file_name": {
 				"type": "string"

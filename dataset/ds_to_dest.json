@@ -2,7 +2,7 @@
 	"name": "ds_to_dest",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ADLhttp",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "netflix_titles.csv",
-				"folderPath": "csvfiles",
+				"fileName": "olist_order_payments_dataset.csv",
+				"folderPath": "csv_files",
 				"fileSystem": "source"
 			},
 			"columnDelimiter": ",",
