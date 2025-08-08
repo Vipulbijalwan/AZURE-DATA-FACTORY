@@ -1,0 +1,9 @@
+{
+	"name": "data-fact-vip",
+	"location": "uaenorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "31f8f59d-21be-448d-b598-da421b482a3b",
+		"tenantId": "bf3c283d-dcc6-4636-b198-b65602399859"
+	}
+}
