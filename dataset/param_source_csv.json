@@ -1,6 +1,10 @@
 {
 	"name": "param_source_csv",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
 		"parameters": {
 			"file_name": {
 				"type": "string"
