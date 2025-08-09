@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "git to source",
+				"name": "copy data from source to destination",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -18,8 +18,9 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "HttpReadSettings",
-							"requestMethod": "GET"
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -48,13 +49,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "source_git",
+						"referenceName": "ds_to_dest",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "sink_git",
+						"referenceName": "csv_sink",
 						"type": "DatasetReference"
 					}
 				]
@@ -64,7 +65,7 @@
 				"type": "Delete",
 				"dependsOn": [
 					{
-						"activity": "git to source",
+						"activity": "copy data from source to destination",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -80,13 +81,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "source_git",
+						"referenceName": "cvs_source",
 						"type": "DatasetReference"
 					},
 					"enableLogging": false,
 					"storeSettings": {
-						"type": "HttpReadSettings",
-						"requestMethod": "GET"
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
 					}
 				}
 			}
