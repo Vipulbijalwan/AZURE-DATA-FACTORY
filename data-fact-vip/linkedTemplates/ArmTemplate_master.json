@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com"
 		},
+		"manager Trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/7d09f7e5-21d5-47a7-82db-f1560c909816/resourceGroups/azure-data-factory/providers/Microsoft.Storage/storageAccounts/datafactstorage"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -72,6 +76,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"manager Trigger_properties_typeProperties_scope": {
+						"value": "[parameters('manager Trigger_properties_typeProperties_scope')]"
 					}
 				}
 			},
