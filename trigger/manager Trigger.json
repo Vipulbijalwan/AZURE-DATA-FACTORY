@@ -1,0 +1,24 @@
+{
+	"name": "manager Trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Storage Trigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/source/blobs/csv_files/Athletes.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/7d09f7e5-21d5-47a7-82db-f1560c909816/resourceGroups/azure-data-factory/providers/Microsoft.Storage/storageAccounts/datafactstorage",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
